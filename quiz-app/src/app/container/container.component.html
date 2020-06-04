@@ -6,6 +6,22 @@
             <div id="page-title">
                 <h1 class="page-header text-overflow">
                     Dashboard</h1>
+                    
+<button (click)="createquiz()" >Add</button>
+                    <table border="1" style="width: 33%">
+                        <tr>
+                          <th>Id</th>
+                          <th>quizCategory</th>
+                          <th>quizName</th>
+                        </tr>
+                        <tr *ngFor="let qdata of quizmodel">
+                          <td>{{ qdata.id }}</td>
+                          <td> {{ qdata.quizCategory }}</td>
+                          <td>{{qdata.quizName}}</td>
+                           
+                        </tr>
+                      </table>
+
                 <!--Searchbox-->
                 <div class="searchbox">
                     <div class="input-group custom-search-form">
@@ -17,6 +33,8 @@
             <!--End page title-->
             <!--Page content-->
             <!--===================================================-->
+            
+ 
             <div id="page-content">
                 <div class="row">
                      
