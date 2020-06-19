@@ -5,20 +5,20 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DashBoardComponent } from './dash-board/dash-board.component';
-import { MainnavComponent } from './dash-board/mainnav/mainnav.component';
-import { NavbarComponent } from './dash-board/navbar/navbar.component';
-import { ContainerComponent } from './container/container.component';
-import { FooterComponent } from './dash-board/footer/footer.component';
+import { MainnavComponent } from './_layout.admin/mainnav/mainnav.component';
+import { NavbarComponent } from './_layout.admin/navbar/navbar.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { FooterComponent } from './_layout.admin/footer/footer.component';
+import { CategoryComponent } from './category/category.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashBoardComponent,
     MainnavComponent,
     NavbarComponent,
-    ContainerComponent,
-    FooterComponent
+    DashboardComponent,
+    FooterComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,

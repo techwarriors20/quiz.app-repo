@@ -1,6 +1,6 @@
  export interface Quizmodel
 {
-    id: string;
+     
     quizCategory: string;
     quizName: string;
     questionAnswer: [

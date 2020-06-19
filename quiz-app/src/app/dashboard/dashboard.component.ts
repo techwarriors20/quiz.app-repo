@@ -1,37 +1,69 @@
 import { Component, OnInit } from '@angular/core';
 import { QuizapiService } from '../services/quizapi.service';
 import{Quizmodel} from '../model/Quizmodel';
-import { TestBed } from '@angular/core/testing';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+import { of, from } from 'rxjs'
+import { tap, distinct, map } from 'rxjs/operators'
+ 
+ 
+ 
 
 @Component({
   selector: 'app-container',
-  templateUrl: './container.component.html',
-  styleUrls: ['./container.component.css']
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
 })
-export class ContainerComponent implements OnInit {
+export class DashboardComponent implements OnInit {
   
-  quizmodel = new Array<Quizmodel>();
+  quizmodel: Quizmodel[];
 
-  constructor( private quizservice: QuizapiService,private http:HttpClient) {
-    this.quizservice.getallquiz().subscribe(response => 
-      {
-        this.quizmodel = response;
-      });
+  
+
+  constructor( private quizservice: QuizapiService) {
+    
   }
 
   ngOnInit() {
+
+    this.quizservice.getallquiz().subscribe((data: Quizmodel[])=>{
+     // this.quizmodel=data;
+
+      this.quizmodel=(data.filter((thing, i, arr) => arr.findIndex(t => t.quizCategory === thing.quizCategory) === i));
+       
+    })  
+
+   
+    
+     
    
   }
+  getClass(j){
+
+    if(j==0)
+    {
+      return 'panel panel-success panel-colorful';
+    }
+    else if(j==1)
+    {
+      return 'panel panel-info panel-colorful';
+    }
+    else if (j==2)
+    {
+      return 'panel panel-purple panel-colorful';
+    }
+    else{
+      return 'panel panel-warning panel-colorful';
+    }
+ }
 
   createquiz()
   {
   
      const quizmodel : Quizmodel = 
       {
-        id : "5ed4efac0fd6f72dd04534ab",
-        quizCategory : "TestCategory",
-        quizName: "Test",
+         
+        quizCategory : "Machine",
+        quizName: "windows",
         questionAnswer: [
           {
             question: "Hi",
