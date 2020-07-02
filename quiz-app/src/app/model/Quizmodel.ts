@@ -1,6 +1,6 @@
  export interface Quizmodel
 {
-     
+    id: string;
     quizCategory: string;
     quizName: string;
     questionAnswer: [
@@ -10,7 +10,7 @@
         answers: [
           {
             answer: string;
-            isCorrect: 0;
+            isCorrect: string;
             answerDetail: string
           }
         ]

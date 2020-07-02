@@ -10,6 +10,14 @@ import { NavbarComponent } from './_layout.admin/navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FooterComponent } from './_layout.admin/footer/footer.component';
 import { CategoryComponent } from './category/category.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { GeneratequizComponent } from './category/generatequiz/generatequiz.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { CnavbarComponent } from './_layout.client/cnavbar/cnavbar.component';
+import { ClientcategoryComponent } from './employee/clientcategory/clientcategory.component';
+import { AssignmentComponent } from './employee/assignment/assignment.component';
+
 
 @NgModule({
   declarations: [
@@ -18,12 +26,20 @@ import { CategoryComponent } from './category/category.component';
     NavbarComponent,
     DashboardComponent,
     FooterComponent,
-    CategoryComponent
+    CategoryComponent,
+    GeneratequizComponent,
+    EmployeeComponent,
+    CnavbarComponent,
+    ClientcategoryComponent,
+    AssignmentComponent,
+    
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,16 +4,14 @@ import{Quizmodel} from '../model/Quizmodel';
 
 import { of, from } from 'rxjs'
 import { tap, distinct, map } from 'rxjs/operators'
- 
- 
- 
 
 @Component({
-  selector: 'app-container',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-employee',
+  templateUrl: './employee.component.html',
+  styleUrls: ['./employee.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class EmployeeComponent implements OnInit {
+
   show:boolean=true;
   quizmodel: Quizmodel[];
 
@@ -105,5 +103,5 @@ export class DashboardComponent implements OnInit {
 //           console.log(data);
 //     })
 //   }
+
 }
-  
