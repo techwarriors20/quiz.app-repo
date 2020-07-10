@@ -19,10 +19,10 @@ export class QuizapiService {
 
   //#region  header and token
   //baseUri = 'https://cors-anywhere.herokuapp.com/https://reflectapp.azure-api.net/api';
-  baseUri='https://localhost:5001/api/v1/quiz';
+  baseUri='http://52.224.89.82/api/v1/quiz';
   
 
-  token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNTkyNTQ5MTk1LCJleHAiOjE1OTMxNTM5OTUsImlhdCI6MTU5MjU0OTE5NX0.hxiVr5ylXRKy7k9JG99-Jr2JFqNMI69qzkteRD3cVZM";       
+  token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNTk0MzU3MDA4LCJleHAiOjE1OTQ5NjE4MDgsImlhdCI6MTU5NDM1NzAwOH0.8AqOoSHe7Xn1ZOmT2P5-9Q7B-vEnhLK25scfEJKAYbk";       
   headers_object = new HttpHeaders().set("Authorization", "Bearer " + this.token).set('Content-Type','application/json');
   httpOptions = { 'headers': this.headers_object};
  //#endregion
