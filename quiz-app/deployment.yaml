@@ -1,0 +1,18 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "quizapp"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "quizapp"
+    spec:
+      containers:
+        - name: "quizapp"
+          image: "quizreg.azurecr.io/quizapp"
+          ports:
+          - containerPort: 80
+          
+          ---
