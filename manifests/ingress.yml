@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "quizapp-c813"
+    labels:
+        app: "quizapp-c813"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: quizappcb77-quizapp-c813.e87f1712322d4938963c.eastus.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "quizapp-c813"
+                servicePort: 80
